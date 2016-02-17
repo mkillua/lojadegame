@@ -48,12 +48,11 @@ class JogosController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            var_dump($em);
-            die();
+            
             $em->persist($jogo);
             $em->flush();
 
-            return $this->redirectToRoute('lojadegames_jogos_show', array('id' => $jogos->getId()));
+            return $this->redirectToRoute('lojadegames_jogos_show', array('id' => $jogo->getId()));
         }
 
         return $this->render('jogos/new.html.twig', array(

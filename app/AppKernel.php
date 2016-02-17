@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new LojaBundle\LojaBundle(), 
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+           
             
             
         ];

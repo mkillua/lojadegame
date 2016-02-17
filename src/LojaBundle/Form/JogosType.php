@@ -18,7 +18,7 @@ class JogosType extends AbstractType
             ->add('nomeDoJogo')
             ->add('duracao')
             ->add('idGenero')
-            ->add('createdAt', '\Symfony\Component\Form\Extension\Core\Type\DateType');
+           
             
         ;
     }
