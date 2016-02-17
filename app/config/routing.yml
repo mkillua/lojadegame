@@ -1,3 +1,8 @@
+base:
+    resource: "@BaseBundle/Controller/"
+    type:     annotation
+    prefix:   /base/
+
 loja:
     resource: "@LojaBundle/Controller/"
     type:     annotation
