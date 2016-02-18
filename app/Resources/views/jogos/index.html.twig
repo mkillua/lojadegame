@@ -1,40 +1,82 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Jogos list</h1>
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <h3>
+                    Jogos disponiveis
 
-    <table>
-        <thead>
+                </h3>
+            </div>
+
+            <div class="title_right">
+                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Jogos para troca <small>aproveite</small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a href="#"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <table id="example" class="table table-striped responsive-utilities jambo_table">
+                            <thead>
+                            <tr class="headings">
+
+                                <th>nome </th>
+                                <th>genero</th>
+                                <th>plataforma</th>
+                                <th>duracao</th>
+                                <th>preco</th>
+                                <th>troca</th>
+                                <th class=" no-link last"><span class="nobr">Action</span>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for jogo in jogos %}
             <tr>
-                <th>Id</th>
-                <th>Nomedojogo</th>
-                <th>Duracao</th>
-                <th>Idgenero</th>
-                <th>Createdat</th>
-                <th>Updatedat</th>
-                <th>Deletedat</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for jogo in jogos %}
-            <tr>
-                <td><a href="{{ path('lojadegames_jogos_show', { 'id': jogo.id }) }}">{{ jogo.id }}</a></td>
-                <td>{{ jogo.nomeDoJogo }}</td>
+
+                <td>{{ jogo.nomeDoJogo }} </td>
                 <td>{{ jogo.duracao }}</td>
                 <td>{{ jogo.idGenero }}</td>
                 <td>{% if jogo.createdAt %}{{ jogo.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if jogo.updatedAt %}{{ jogo.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if jogo.deletedAt %}{{ jogo.deletedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('lojadegames_jogos_show', { 'id': jogo.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('lojadegames_jogos_edit', { 'id': jogo.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                <td><a href="{{ path('lojadegames_jogos_show', { 'id': jogo.id }) }}" class="btn btn-primary">saber mais</a>
+                    <a href="{{ path('lojadegames_jogos_edit', { 'id': jogo.id }) }}" class="btn btn-success">editar</a>
+
+
                 </td>
             </tr>
         {% endfor %}
