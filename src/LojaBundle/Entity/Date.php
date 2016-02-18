@@ -5,10 +5,10 @@ namespace LojaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
-/** 
- * Timestampable abstract class 
- * @ORM\MappedSuperclass 
- */ 
+/**
+ * Timestampable abstract class
+ * @ORM\MappedSuperclass
+ */
 abstract class Date
 {
 

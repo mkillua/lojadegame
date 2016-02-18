@@ -38,23 +38,11 @@ class Genero extends Date
     private $status;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="dt_created", type="datetime")
-     */
-    private $createdAt;
-
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="updated_at", type="datetime")
-     */
-    private $updatedAt;
-
-    /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Jogos", mappedBy="Genero", cascade={"remove"})
+     *
+     * @ORM\OneToMany(targetEntity="Jogos", mappedBy="genero", cascade={"remove"})
      */
+   
     private $jogos;
 
     /**
@@ -63,7 +51,7 @@ class Genero extends Date
     public function __construct()
     {
         parent::__construct();
-        $this->post = new ArrayCollection();
+        $this->jogos = new ArrayCollection();
     }
 
     /**
@@ -157,13 +145,5 @@ class Genero extends Date
     public function getJogos()
     {
         return $this->jogos;
-    }
-    
-     /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->getName();
     }
 }

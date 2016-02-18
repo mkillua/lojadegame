@@ -37,10 +37,10 @@ class Jogos extends Date
 
     /**
      * @var genero
-     * *@ORM\ManyToOne(targetEntity="Genero", inversedBy="jogos")
-     * @ORM\JoinColumn(name="genero", referencedColumnName="id", nullable=false)
-     * @ORM\Column(name="genero", type="integer")
+     * @ORM\ManyToOne(targetEntity="Genero", inversedBy="jogos")
+     * @ORM\JoinColumn(name="genero_id", referencedColumnName="id", nullable=false)
      */
+    
     private $genero;
 
     public function getId()
@@ -118,5 +118,13 @@ class Jogos extends Date
     public function getGenero()
     {
         return $this->genero;
+    }
+    
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
     }
 }
