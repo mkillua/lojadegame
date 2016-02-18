@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Genero</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ genero.id }}</td>
+            </tr>
+            <tr>
+                <th>Nome</th>
+                <td>{{ genero.nome }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ genero.status }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('genero_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

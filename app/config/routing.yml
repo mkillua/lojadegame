@@ -1,3 +1,7 @@
+loja_genero:
+    resource: "@LojaBundle/Controller/GeneroController.php"
+    type:     annotation
+
 base:
     resource: "@BaseBundle/Controller/"
     type:     annotation

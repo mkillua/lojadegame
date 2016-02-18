@@ -4,7 +4,7 @@ parameters:
     database_port: 3306
     database_name: trocagames
     database_user: root
-    database_password: L0rien1993
+    database_password: 123456
     mailer_transport: null
     mailer_host: null
     mailer_user: null

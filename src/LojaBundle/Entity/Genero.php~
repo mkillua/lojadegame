@@ -1,0 +1,127 @@
+<?php
+
+namespace LojaBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
+/**
+ * Genero
+ *
+ * @ORM\Table(name="genero")
+ * @ORM\Entity(repositoryClass="LojaBundle\Repository\GeneroRepository")
+ */
+class Genero extends Date
+{
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nome", type="string", length=30)
+     */
+    private $nome;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="status", type="integer")
+     */
+    private $status;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="dt_created", type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
+    private $updatedAt;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Jogos", mappedBy="Genero", cascade={"remove"})
+     */
+    private $jogos;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->post = new ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nome
+     *
+     * @param string $nome
+     *
+     * @return Genero
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+
+        return $this;
+    }
+
+    /**
+     * Get nome
+     *
+     * @return string
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * Set status
+     *
+     * @param integer $status
+     *
+     * @return Genero
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return int
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+}

@@ -18,6 +18,7 @@ class JogosType extends AbstractType
             ->add('nomeDoJogo')
             ->add('duracao')
             ->add('idGenero')
+             ->add('genero')
            
             
         ;
